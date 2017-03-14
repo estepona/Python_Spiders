@@ -1,5 +1,5 @@
 ### For practice
-### both two spiders should work and deliver the same resuls
+### both spiders should work and deliver the same resuls
 
 Updates:
 - 3/14/2017: _explore complete, working on _clean
