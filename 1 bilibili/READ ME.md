@@ -3,6 +3,7 @@
 
 Updates:
 - 3/14/2017: _explore complete, working on _clean
+
 This spider aims to find all important statistics about all videos of a given user. 
 - input: user's mid
 - output: a csv file that contains the following information:
