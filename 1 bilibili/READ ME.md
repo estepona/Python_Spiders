@@ -1,5 +1,5 @@
 ### For practice
-### both spiders should work and deliver the same resuls
+### both spiders should work and deliver the same results
 
 #### Updates:
 - 3/14/2017: \_clean complete, planning on "run_all.py"
