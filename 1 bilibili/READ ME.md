@@ -1,11 +1,11 @@
 ### For practice
 ### both spiders should work and deliver the same resuls
 
-Updates:
+#### Updates:
 - 3/14/2017: \_clean complete, planning on "run_all.py"
 - 3/13/2017: \_explore complete, working on _clean
 
-This spider aims to find all important statistics about all videos of a given user. 
+#### This spider aims to find all important statistics about all videos of a given user. 
 - input: user's mid
 - output: a csv file that contains the following information:
 	- aid
@@ -20,6 +20,6 @@ This spider aims to find all important statistics about all videos of a given us
 	- favorites
 	- coin
 
-Two spiders:
+#### Two spiders:
 - \_explore: for explore and practice. all errors were saved as a reminder. 
 - \_clean: organized file. I try to put everything into functions.
