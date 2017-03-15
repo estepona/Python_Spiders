@@ -26,4 +26,4 @@
 - \_clean: organized file. I try to put everything into functions.
 
 #### Output file:
-'stat_16693558_2017-03-14_20'45'58.csv' is a sample output file.
+['stat_16693558_2017-03-14_20'45'58.csv'](https://github.com/estepona/Python_Spiders/blob/master/1%20bilibili/stat_16693558_2017-03-14_20'45'58.csv) is a sample output file.
