@@ -1,8 +1,8 @@
 ### For practice
-### both spiders should work and deliver the same results
+### All spiders should work and deliver the same result
 
 #### Updates:
-- 3/28/2017: 
+- 3/28/2017: bilibili\_get\_video\_info.py completed;
 - 3/15/2017: uploaded sample output csv file; added a solution of opening output files to Mac users  
 - 3/14/2017: \_clean completed; planning on "run_all.py"
 - 3/13/2017: \_explore completed; working on \_clean
