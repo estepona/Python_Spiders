@@ -14,8 +14,7 @@
   - *completed*
 - 5 Youmu
   - it's actually my first spider. I spent so much time and effort on it
-  - need to work on a cleaner version some time
   - *completed*
-  - she's amazing
+  - she's cute
   
 The notes are either in English or 中文. 
