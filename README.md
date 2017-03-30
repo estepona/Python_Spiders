@@ -1,5 +1,5 @@
 # Python Spiders
-### Structure:
+### Spiders:
 - 1 bilibili
   - scrape video info of specified braodcasters from http://www.bilibili.com/
   - *completed*
