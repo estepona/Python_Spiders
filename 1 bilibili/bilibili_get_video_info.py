@@ -6,6 +6,7 @@ from bs4 import BeautifulSoup as BS
 import re
 import codecs
 import pandas as pd
+import time
 from datetime import datetime
 
 
@@ -31,7 +32,7 @@ def get_info(url_list):
     for url in url_list:
         url_page = codecs.decode(requests.get(url).content, 'unicode_escape')
         spider1_1 = re.findall('aid":(\d+).{1,50}title":"(.{1,80})","sub.{1,50}play":(\d+),"review":(\d+),"video_review":(\d+),"favorites":(\d+)', url_page)
-        spider1_2 = re.findall('length":"([\d:]+)', url_page)    
+        spider1_2 = re.findall('created":([\d:]+),.{1,120}length":"([\d:]+)', url_page)    
         spider1_2_index = 0 # index of spider1_2，reset every big loop
         for tuples in spider1_1:
             videos.append(dict())
@@ -41,7 +42,9 @@ def get_info(url_list):
             videos[index]['review'] = tuples[3]
             videos[index]['danmaku'] = tuples[4]
             videos[index]['favorites'] = tuples[5]
-            videos[index]['length'] = spider1_2[spider1_2_index]
+            videos[index]['date'] = datetime.fromtimestamp( int(spider1_2[spider1_2_index][0]) ).strftime('%Y-%m-%d %H:%M:%S')[:10]
+            videos[index]['time'] = datetime.fromtimestamp( int(spider1_2[spider1_2_index][0]) ).strftime('%Y-%m-%d %H:%M:%S')[11:]
+            videos[index]['length'] = spider1_2[spider1_2_index][1]
             index += 1
             spider1_2_index += 1
             print(str(index) + '/' + total_videos + ' information collected from ' + url)
@@ -56,7 +59,17 @@ def get_info(url_list):
     for i in videos:
         aid = i['aid']
         url = spider2_url + aid # type(aid) = aid, thus no need to convert it
-        coin = re.findall('coin":(\d+)', str(requests.get(url).content))[0]
+        # get page and prevent from ConnectionError
+        page = " "
+        while page == " ":
+        	try:
+        		page = requests.get(url)
+        	except:
+        		print("Connection refused by the server...Let me sleep for 5 seconds...ZZzzzz...")
+        		time.sleep(2)
+        		print("Let me continue...")
+        		continue
+        coin = re.findall('coin":(\d+)', str(page.content))[0]
         i['coin'] = coin
         print(str(videos.index(i)+1) + '/' + total_videos + ' information collected from ' + url) 
     print('spider 2/3 finished')
@@ -66,20 +79,12 @@ def get_info(url_list):
     for i in videos:
         aid = i['aid']
         url = spider3_url + aid
-        try:
-            v_d_t = BS(requests.get(url).content, 'html.parser').find('time').get_text().split(' ')
-            i['date'] = v_d_t[0]
-            i['time'] = v_d_t[1]
-            i['url'] = url
-        except AttributeError:
-            print('an error has occured here')
-            i['date'] = ''
-            i['time'] = ''
-            i['url'] = url
+        i['url'] = url
         print(str(videos.index(i)+1) + '/' + total_videos + ' information collected from ' + url)
     print('spider 3/3 finished')
     ## finish
     return videos
+
 
 ## put into pandas
 def into_pandas(videos):
@@ -143,8 +148,8 @@ for mid in mid_list:
 ### Run All - auto
 
 ## Mid List - details in the last section
-#mid_list = ['43536', '423895', '433351', '16693558', '3607081', '742470', '2745073']
-mid_list = ['742470', '2745073']
+mid_list = ['43536', '423895', '433351', '16693558', '3607081', '742470', '2745073']
+# test: mid_list = ['742470', '2745073']
 
 ## call functions
 for mid in mid_list:
