@@ -2,6 +2,7 @@
 ### All spiders should work and deliver the same result
 
 #### Updates:
+- 3/29/2017: fixed ConnectionError problem, revised code to get timestamp from spider1, which shortens time by half!
 - 3/28/2017: bilibili\_get\_video\_info.py completed;
 - 3/15/2017: uploaded sample output csv file; added a solution of opening output files to Mac users  
 - 3/14/2017: \_clean completed; planning on "run_all.py"
