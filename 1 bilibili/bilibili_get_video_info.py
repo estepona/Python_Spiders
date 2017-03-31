@@ -56,8 +56,8 @@ def get_info(url_list):
     ## spider 2/3
     print('initiating spider 2/3...')
     spider2_url = 'http://api.bilibili.com/archive_stat/stat?aid='
-    for i in videos:
-        aid = i['aid']
+    for j in videos:
+        aid = j['aid']
         url = spider2_url + aid # type(aid) = aid, thus no need to convert it
         # get page and prevent from ConnectionError
         page = " "
@@ -70,17 +70,17 @@ def get_info(url_list):
         		print("Let me continue...")
         		continue
         coin = re.findall('coin":(\d+)', str(page.content))[0]
-        i['coin'] = coin
-        print(str(videos.index(i)+1) + '/' + total_videos + ' information collected from ' + url) 
+        j['coin'] = coin
+        print(str(videos.index(j)+1) + '/' + total_videos + ' information collected from ' + url) 
     print('spider 2/3 finished')
     ## spider 3/3
     print('initiating spider 3/3...')
     spider3_url = 'http://www.bilibili.com/video/av'
-    for i in videos:
-        aid = i['aid']
+    for k in videos:
+        aid = k['aid']
         url = spider3_url + aid
-        i['url'] = url
-        print(str(videos.index(i)+1) + '/' + total_videos + ' information collected from ' + url)
+        k['url'] = url
+        print(str(videos.index(k)+1) + '/' + total_videos + ' information collected from ' + url)
     print('spider 3/3 finished')
     ## finish
     return videos
