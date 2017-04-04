@@ -16,5 +16,9 @@
   - it's actually my first spider. I spent so much time and effort on it
   - *completed*
   - she's cute
-  
+- 6 Twitter Trending Videos Analysis
+  - collect info of trending videos on YouTube from https://www.youtube.com/feed/trending
+  - only collects videos published within 24 hours
+  - 1/2 completed
+
 The notes are either in English or 中文. 
