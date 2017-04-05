@@ -19,6 +19,7 @@
 - 6 Twitter Trending Videos Analysis
   - collect info of trending videos on YouTube from https://www.youtube.com/feed/trending
   - only collects videos published within 24 hours
-  - 1/2 completed
+  - in order to get the most precise data, please run the .py file every 15 minutes
+  - *completed*
 
 The notes are either in English or 中文. 
