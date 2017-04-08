@@ -132,7 +132,7 @@ def check_old(df):
         df_time = pd.to_datetime(df_time)
         if df.oneDayEnd.iloc[df_time_index] == 0:
             if (time_now - df_time).days >= 1:
-                i_api = api_url.replace('here', df.ID.iloc[df_time_index]).json()
+                i_api = requests.get(api_url.replace('here', df.ID.iloc[df_time_index])).json()
                 i_url = df.url.iloc[df_time_index]
                 # update 
                 # if there is 'statistics'
