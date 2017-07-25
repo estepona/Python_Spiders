@@ -1,5 +1,5 @@
-# Python Spiders
-### Spiders
+# Web Crawlers
+### Crawler
 - 1 bilibili
   - scrape video info of specified braodcasters from http://www.bilibili.com/
   - *completed*
@@ -13,7 +13,7 @@
   - collect "Python" book pictures from http://www.dangdang.com/ search results
   - *completed*
 - 5 Youmu
-  - it's actually my first spider. I spent so much time and effort on it
+  - it's actually my first crawler. I spent so much time and effort on it
   - *completed*
   - she's cute
 - 6 YouTube Trending Videos Analysis
