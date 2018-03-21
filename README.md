@@ -15,7 +15,6 @@
 - 5 Youmu
   - it's actually my first crawler. I spent so much time and effort on it
   - *completed*
-  - she's cute
 - 6 YouTube Trending Videos Analysis
   - collect info of trending videos on YouTube from https://www.youtube.com/feed/trending
   - only collects videos published within 24 hours
